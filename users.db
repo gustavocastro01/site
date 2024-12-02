@@ -1,12 +1,12 @@
+-- Criação do Banco de Dados
 CREATE DATABASE cupcake_store;
 
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(100) NOT NULL,
-  email VARCHAR(150) UNIQUE NOT NULL,
-  password VARCHAR(255) NOT NULL
-);
 
--- Insira um usuário exemplo
-INSERT INTO users (name, email, password) 
-VALUES ('Atilio', 'atilio@example.com', crypt('123456', gen_salt('bf')));
+-- Criação da Tabela de Usuários
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,        
+    name VARCHAR(100) NOT NULL,    
+    email VARCHAR(150) UNIQUE NOT NULL, 
+    password VARCHAR(255) NOT NULL, 
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
